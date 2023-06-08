@@ -1,0 +1,101 @@
+/* BUTTON STYLE */
+
+.btn {
+  /* Un-visited */
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 5rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: $regular-text-size;
+  }
+
+  &:hover {
+    // Cool Effect : 1. Move button up then appear back shadow
+    transform: translateY(-0.3rem);
+
+    @include shadow-btn-normal;
+
+    &::after { //.btn:hover::after
+      
+      // Cool Effect : 3. Background button scale up then disappear
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    // Cool Effect : 2. Move button down then back shadow will shrink
+    transform: translateY(-0.1rem);
+
+    @include shadow-btn-small;
+  }
+
+  // Background button
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%; /* Follow width, height of button ~ treat as a child element */
+    width: 100%;
+    border-radius: 5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark-1;
+
+    &::after {
+      //.btn--white::after
+      background-color: $color-white; /* Back shadow animation */
+    }
+  }
+
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary; /* Back shadow animation */
+    }
+  }
+
+  &--animate {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards; /* Start the animation frame before delay was finished */
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    display: inline-block;
+    font-size: $regular-text-size;
+    color: $color-primary;
+    border-bottom: 1px solid $color-primary;
+    padding: 3px;
+    transition: all .2s;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    transform: translateY(-5px);
+
+    @include shadow-btn-normal;
+  }
+
+  &:active {
+    transform: translateY(0);
+
+    @include shadow-btn-small;
+  }
+}

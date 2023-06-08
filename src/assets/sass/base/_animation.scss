@@ -1,0 +1,61 @@
+@keyframes moveInLeft {
+  /* Start position from left */
+
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  /* End position offset a little bit to right */
+
+  80% {
+    opacity: 0.8;
+    transform: translateX(5px);
+  }
+
+  /* Adjust position from right to left */
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInRight {
+  /* Start position from right */
+
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  /* End position offset a little bit to left */
+
+  80% {
+    opacity: 0.8;
+    transform: translateX(-5px);
+  }
+
+  /* Adjust position from left to right */
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInBottom {
+  /* Start position from bottom */
+
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  /* End position from bottom to top */
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

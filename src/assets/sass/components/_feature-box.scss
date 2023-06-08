@@ -1,0 +1,30 @@
+.feature-box {
+    background-color: rgba($color-white, .8); // transparancy
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 2.5rem;
+    border-radius: 3px;
+    @include shadow-box(rgba($color-black, 0.2));
+    transition: transform .3s;
+
+    &__icon {
+        font-size: 6rem;
+        // Cool Effect : 1. Gradient Text Style
+        background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+        background-clip: text;
+        color: transparent;
+        
+        padding-top: 1.5rem;
+    }
+
+    &__text {
+        height: 10rem;
+        overflow: hidden;
+    }
+
+    &:hover {
+        // Cool Effect : 2. Move up and scale up then box shadow will wide
+        transform: translateY(-2rem) scale(1.1);
+        @include shadow-box(rgba($color-black, 0.2), 2);
+    }
+}

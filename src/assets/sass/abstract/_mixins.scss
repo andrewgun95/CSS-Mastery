@@ -1,0 +1,21 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        clear: both; // left, right
+        display: table;
+    }
+}
+
+@mixin shadow-btn-small {
+    // Offset on y-direction
+    box-shadow: 0rem 0.5rem 1rem rgba($color-black, 0.2);
+}
+
+@mixin shadow-btn-normal {
+    // Offset on y-direction
+    box-shadow: 0rem 1rem 2rem rgba($color-black, 0.2);
+}
+
+@mixin shadow-box($color, $offset-multipler: 1, $blur-multiplier: 2) {
+    box-shadow: 0 1.5rem * $offset-multipler 2rem * $blur-multiplier $color;
+}

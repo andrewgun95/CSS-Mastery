@@ -1,0 +1,76 @@
+/* BODY TEXT STYLE */
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+  /* font-size: 16px; */
+  line-height: 1.7; /* 1.7 times greater than normal line heigth */
+  color: $color-grey-dark-1;
+}
+
+/* HEADING TEXT STYLE */
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  backface-visibility: hidden; /* for animation */
+  margin-bottom: 5rem;
+
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: normal; /* similar to 400 */
+    letter-spacing: 3.5rem;
+
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    /* animation-delay: 3s; */ /* start animation after 3 seconds */
+    /* animation-iteration-count: 3; */ /* will animate 3 times */
+  }
+
+  &--sub {
+    // .heading-primary--sub
+    display: block;
+    font-size: 2rem;
+    font-weight: bold; /* similar to 700 */
+    letter-spacing: 1.75rem;
+    
+    animation: moveInRight 1s ease-in;
+  }
+}
+
+.heading-secondary {
+  font-size: 3.5rem;
+  font-weight: bold; /* similar to 700 */
+  text-transform: uppercase;
+  display: inline-block;
+
+  // Cool Effect : Gradient Text Style
+  background-image: linear-gradient(to right, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8));
+  background-clip: text;
+  color: transparent;
+
+  letter-spacing: 0.2rem;
+  transition: all .2s;
+
+  // Cool Effect : Text skew and scale up then text shadow appear.
+  &:hover {
+    transform: skewX(15deg) skewY(2deg) scale(1.1);
+    text-shadow: .5rem 1rem 2rem rgba($color-black, .2); // x direction, y direction, blur, color
+  }
+}
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 700; /* similar to bold */
+}
+
+.paragraph {
+  font-size: 1.6rem;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}

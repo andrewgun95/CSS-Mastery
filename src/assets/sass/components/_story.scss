@@ -1,0 +1,70 @@
+.story {
+    width: 75%;
+    margin: 5rem auto;
+    @include shadow-box(rgba($color-black, .1), 2, 3);
+    background-color: rgba($color-white, .5);
+    border-radius: 3px;
+    padding: 6rem 6rem 6rem 9rem;
+    transform: skewX(-8deg);
+
+    @include clearfix;
+
+    &__shape {
+        width: 15rem;
+        height: 15rem;
+        float: left;
+
+        // Cool Effect : 1. Text render follow form of the circle shape
+        // Only work if have dimention and float
+        shape-outside: circle(50% at 50% 50%);   // 50% = 7.5rem
+        clip-path: circle(50% at 50% 50%);       // 50% = 7.5rem
+
+        transform: translateX(-3rem) skewX(8deg);
+
+        position: relative;
+    }
+
+    &__img {
+        height: 100%; // 100% of parent = 15 rem
+        // Cool Effect : 3. Image will gradually remove zoom-in and then got blur and darker
+        transform: translateX(-15%) scale(1.5);     // Fix center position and starting with zoom-in 
+
+        transition: all .5s;
+    }
+
+    &__text {
+        font-size: $regular-text-size;
+        transform: skewX(8deg);
+    }
+
+    &__caption {
+        // Centered text caption
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        
+        font-size: 1.7rem;
+        font-weight: normal;
+        text-transform: uppercase;
+        text-align: center;
+        color: $color-white;
+
+        // Cool Effect : 2. Text will fade in from bottom to top
+        transform: translate(-50%, 25%);  // Adjust position little bit to bottom
+        opacity: 0;                       // Start with invisible
+
+        transition: all .5s;
+    }
+
+    &:hover &__caption {
+        transform: translate(-50%, -50%); // Adjust position to center
+        opacity: 1;                       // End with visible
+    }
+
+    &:hover &__img {
+        transform: translateX(-15%) scale(1);      // Fix center position and remove zoom-in
+        filter: blur(1px) brightness(90%);         // Got blur and dark
+    }
+
+
+}
