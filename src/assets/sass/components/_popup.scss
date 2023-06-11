@@ -9,6 +9,20 @@
 
     background-color: rgba($color-black, .8);
 
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all .4s;
+
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &:target &__content {
+        transform: translate(-50%, -50%) scale(1.0);
+        opacity: 1;
+    }
 
     &__content {
         width: 75%;
@@ -16,7 +30,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%) scale(0.2);
 
         background-color: $color-white;
 
@@ -27,6 +41,14 @@
         display: table;
 
         overflow: hidden;
+
+        opacity: 0;
+
+        transition: all .4s .2s;
+
+        @include screen(tablet_landscape) {
+            display: block;
+        }
     }
 
     &__left {
@@ -61,6 +83,45 @@
         column-rule: 1px solid $color-grey-light-2;
 
         hyphens: auto;
+    }
+
+    &__close {
+
+        &:link,
+        &:visited {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;        
+    
+            font-size: 3.5rem;
+            line-height: 2.5rem;
+            
+            color: $color-grey-dark-1;
+
+            transition: all .2s;
+        }
+
+        &:active,
+        &:hover {
+            color: $color-primary;
+        }
+
+    }
+
+    @include screen(tablet_landscape) {
+        &__left {
+            width: 50%;
+        }
+
+        &__right {
+            width: 50%;
+        }
+    }
+
+    @include screen(tablet_portrait) {
+        &__left {
+            display: none;
+        }
     }
 
 

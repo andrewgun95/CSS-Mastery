@@ -21,6 +21,10 @@
 
         transform: translateX(-3rem) skewX(8deg);
 
+        @include screen(tablet_portrait) {
+            transform: translateX(-3rem) skewX(0);
+        }
+
         position: relative;
     }
 
@@ -35,6 +39,10 @@
     &__text {
         font-size: $regular-text-size;
         transform: skewX(8deg);
+
+        @include screen(tablet_portrait) {        
+            transform: skewX(0);
+        }
     }
 
     &__caption {
@@ -64,6 +72,12 @@
     &:hover &__img {
         transform: translateX(-15%) scale(1);      // Fix center position and remove zoom-in
         filter: blur(1px) brightness(90%);         // Got blur and dark
+    }
+
+    @include screen(tablet_portrait) {
+        width: auto;
+        transform: skewX(0);
+        padding: 3rem 3rem 3rem 6rem;
     }
 
 

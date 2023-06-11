@@ -40,27 +40,21 @@
       transform: rotateY(180deg);
 
       &-1 {
-        background-image: linear-gradient(
-          to right bottom,
-          $color-secondary-light,
-          $color-secondary-dark
-        );
+        background-image: linear-gradient(to right bottom,
+            $color-secondary-light,
+            $color-secondary-dark );
       }
 
       &-2 {
-        background-image: linear-gradient(
-          to right bottom,
-          $color-primary-light,
-          $color-primary-dark
-        );
+        background-image: linear-gradient(to right bottom,
+            $color-primary-light,
+            $color-primary-dark );
       }
 
       &-3 {
-        background-image: linear-gradient(
-          to right bottom,
-          $color-tertiary-light,
-          $color-tertiary-dark
-        )
+        background-image: linear-gradient(to right bottom,
+            $color-tertiary-light,
+            $color-tertiary-dark )
       }
     }
   }
@@ -70,6 +64,7 @@
       // Continue rotate back  from 0 to -180 deg on front side
       transform: rotateY(-180deg);
     }
+
     &--back {
       // Continue rotate front from 180 to 0 deg on back side
       transform: rotateY(0deg);
@@ -85,30 +80,24 @@
     height: 45%;
 
     &--1 {
-      background-image: linear-gradient(
-          to right bottom,
+      background-image: linear-gradient(to right bottom,
           rgba($color-secondary-light, 0.8),
-          rgba($color-secondary-dark, 0.8)
-        ),
+          rgba($color-secondary-dark, 0.8)),
         url(../img/nat-5.jpg);
     }
 
     &--2 {
-      background-image: linear-gradient(
-        to right bottom,
-        rgba($color-primary-light, 0.8),
-        rgba($color-primary-dark, 0.8)
-      ),
-      url(../img/nat-6.jpg);
+      background-image: linear-gradient(to right bottom,
+          rgba($color-primary-light, 0.8),
+          rgba($color-primary-dark, 0.8)),
+        url(../img/nat-6.jpg);
     }
 
     &--3 {
-      background-image: linear-gradient(
-        to right bottom,
-        rgba($color-tertiary-light, 0.8),
-        rgba($color-tertiary-dark, 0.8)
-      ),
-      url(../img/nat-7.jpg);
+      background-image: linear-gradient(to right bottom,
+          rgba($color-tertiary-light, 0.8),
+          rgba($color-tertiary-dark, 0.8)),
+        url(../img/nat-7.jpg);
     }
   }
 
@@ -124,34 +113,28 @@
     text-align: right;
     color: $color-white;
 
-    > span {
+    >span {
       padding: 1rem;
       // Break decoration for inline element
       box-decoration-break: clone;
     }
 
     &--1 {
-      background-image: linear-gradient(
-        to right bottom,
-        rgba($color-secondary-light, 0.9),
-        rgba($color-secondary-dark, 0.9)
-      );
+      background-image: linear-gradient(to right bottom,
+          rgba($color-secondary-light, 0.9),
+          rgba($color-secondary-dark, 0.9));
     }
 
     &--2 {
-      background-image: linear-gradient(
-        to right bottom,
-        rgba($color-primary-light, 0.9),
-        rgba($color-primary-dark, 0.9)
-      );
+      background-image: linear-gradient(to right bottom,
+          rgba($color-primary-light, 0.9),
+          rgba($color-primary-dark, 0.9));
     }
 
     &--3 {
-      background-image: linear-gradient(
-        to right bottom,
-        rgba($color-tertiary-light, 0.9),
-        rgba($color-tertiary-dark, 0.9)
-      );
+      background-image: linear-gradient(to right bottom,
+          rgba($color-tertiary-light, 0.9),
+          rgba($color-tertiary-dark, 0.9));
     }
   }
 
@@ -204,5 +187,56 @@
       font-size: 6rem;
       font-weight: 300;
     }
+  }
+
+  @include screen(tablet_portrait) {
+    perspective: none;
+    -moz-perspective: none;
+
+    position: relative;
+    height: auto;
+
+    border-radius: 3px;
+    @include shadow-box(rgba($color-black, 0.15));
+
+    background-color: $color-white;
+    overflow: hidden;
+
+    &__side {
+      position: relative;
+      transition: none;
+      border-radius: 0;
+      box-shadow: none;
+
+      &--back {
+        transform: none;
+        height: auto;
+
+        clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+
+    &:hover &__side {
+      &--front {
+        transform: none;
+      }
+  
+      &--back {
+        transform: none;
+      }
+    }
+
+    &__title {
+      top: 45%;
+    }
+
+    &__picture {
+      height: 28.5rem;
+    }
+
+    &__price-box {
+      margin: 15% 0;
+    }
+
   }
 }

@@ -13,6 +13,29 @@
 html {
   font-size: 62.5%;
   /* Default font size (user agent style) is 16 px - use percentage instead to depend on user change default font size in the browser */
+  // 1 rem = 10 px
+
+  @include screen(tablet_landscape) {
+    font-size: 56.25%; // 9 px
+  }
+
+  @include screen(tablet_portrait) {
+    font-size: 50%; // 8 px
+  }
+
+  @include screen(phone) {
+    font-size: 40.625%; // 6 px
+  }
+
+  // The same as
+  // @media (max-width: 600px) {
+  //   font-size: 40.625%;
+  // }
+
+  @include screen(large_desktop) {
+    font-size: 75%; // 12 px
+  }
+
 }
 
 body {
@@ -30,4 +53,8 @@ a {
 
 .container {
   padding: 0 3%;
+
+  @include screen(tablet_portrait) {
+    padding: 0;
+  }
 }

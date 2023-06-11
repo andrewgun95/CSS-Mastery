@@ -52,7 +52,7 @@
           <span class="heading-primary--main">Outdoors</span>
           <span class="heading-primary--sub">is where life happens</span>
         </h1>
-        <a href="#" class="btn btn--white btn--animate">Discover our tours</a>
+        <a href="#section-tours" class="btn btn--white btn--animate">Discover our tours</a>
       </div>
     </header>
     <main>
@@ -161,7 +161,7 @@
           </div>
         </div>
       </section>
-      <section class="section-tours">
+      <section class="section-tours" id="section-tours">
         <div class="u-text-center u-margin-bottom-large">
           <h2 class="heading-secondary">Most popular tours</h2>
         </div>
@@ -178,6 +178,7 @@
               ]"
               :price="297"
               :styleModifier="1"
+              :linkTarget="'#popup-tours'"
             ></card-box>
           </div>
           <div class="col-1-of-3">
@@ -192,6 +193,7 @@
               ]"
               :price="497"
               :styleModifier="2"
+              :linkTarget="'#popup-tours'"
             >
             </card-box>
           </div>
@@ -207,6 +209,7 @@
               ]"
               :price="897"
               :styleModifier="3"
+              :linkTarget="'#popup-tours'"
             >
             </card-box>
           </div>
@@ -347,7 +350,7 @@
       </section>
     </main>
     <footer class="footer">
-      <div class="footer__logo-box u-margin-bottom-large">
+      <div class="footer__logo-box">
         <img
           src="./assets/img/logo-green-2x.png"
           alt=""
@@ -388,7 +391,7 @@
       </div>
     </footer>
 
-    <div class="popup">
+    <div class="popup" id="popup-tours">
       <div class="popup__content">
         <div class="popup__left">
           <img src="./assets/img/nat-8.jpg" alt="" class="popup__img" />
@@ -415,6 +418,7 @@
           </p>
           <a href="#" class="btn btn--green">Book Now</a>
         </div>
+        <a href="#section-tours" class="popup__close">&times;</a>
       </div>
     </div>
   </div>

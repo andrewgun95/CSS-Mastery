@@ -3,9 +3,18 @@
   padding: 10rem 0;
   font-size: 1.4rem;
 
+  @include screen(tablet_portrait) {
+    padding: 5rem 0;
+  }
+
   &__logo-box {
     width: 15rem;
     margin: 0 auto;
+    margin-bottom: 8rem;
+
+    @include screen(tablet_portrait) {
+      margin-bottom: 4rem;
+    }
   }
 
   &__logo-img {
@@ -21,6 +30,11 @@
     padding-top: 2rem;
 
     float: left;
+
+    @include screen(tablet_portrait) {
+      width: 100%;
+      text-align: center;
+    }
   }
 
   &__item {
@@ -55,5 +69,9 @@
     font-size: 1.2rem;
 
     color: $color-grey-light-1;
+
+    @include screen(tablet_portrait) {
+      margin-left: 0;
+    }
   }
 }

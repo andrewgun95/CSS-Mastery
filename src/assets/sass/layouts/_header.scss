@@ -2,11 +2,9 @@
 
 .header {
   height: 95vh;
-  background-image: linear-gradient(
-      to right bottom,
+  background-image: linear-gradient(to right bottom,
       rgba($color-primary-light, 0.8),
-      rgba($color-primary-dark, 0.8)
-    ),
+      rgba($color-primary-dark, 0.8)),
     url(../img/hero.jpg);
   background-size: cover;
   background-position: top left;
@@ -17,6 +15,15 @@
   /* clip-path: polygon(0 0, 100% 50%, 0 100%); */
   /* Try using https://bennettfeely.com/clippy/*/
   /* clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%); */
+
+  @include screen(tablet_portrait) {
+    clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  }
+
+  @include screen(phone) {
+    height: 60vh;
+    clip-path: polygon(0 0, 100% 0, 100% 50vh, 0 100%);
+  }
 
   &__logo-box {
     // .header__logo-box

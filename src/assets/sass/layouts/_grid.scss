@@ -2,6 +2,10 @@
     max-width: $grid-width;
     margin: 0 auto;
 
+    @include screen(tablet_portrait) {
+        max-width: $grid-small-width;
+    }
+
     &:not(:last-child) {
         margin-bottom: $grid-gutter-vertical;
     }
@@ -13,6 +17,15 @@
 
         &:not(:last-child) {
             margin-right: $grid-gutter-horizontal;
+
+            @include screen(tablet_portrait) {
+                margin-right: 0;
+                margin-bottom: $grid-gutter-small-horizontal;
+            }
+        }
+
+        @include screen(tablet_portrait) {
+            width: 100% !important;
         }
     }
 

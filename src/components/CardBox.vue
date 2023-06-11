@@ -19,7 +19,7 @@
           <p>Only</p>
           <p>$ {{ price }}</p>
         </div>
-        <a href="#" class="btn btn--white">Book Now!</a>
+        <a :href="linkTarget" class="btn btn--white">Book Now!</a>
       </div>
     </div>
   </div>
@@ -30,7 +30,8 @@ export default {
         title : String,
         contentList: Array,
         price: Number,
-        styleModifier: Number
+        styleModifier: Number,
+        linkTarget: String
     }
 }
 </script>

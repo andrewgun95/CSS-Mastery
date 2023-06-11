@@ -27,6 +27,11 @@ body {
     animation-timing-function: ease-in;
     /* animation-delay: 3s; */ /* start animation after 3 seconds */
     /* animation-iteration-count: 3; */ /* will animate 3 times */
+
+    @include screen(phone) {
+      font-size: 5rem;
+      letter-spacing: 1.5rem;
+    }
   }
 
   &--sub {
@@ -37,6 +42,10 @@ body {
     letter-spacing: 1.75rem;
     
     animation: moveInRight 1s ease-in;
+
+    @include screen(phone) {
+      letter-spacing: .75rem;
+    }
   }
 }
 
@@ -58,6 +67,14 @@ body {
   &:hover {
     transform: skewX(15deg) skewY(2deg) scale(1.1);
     text-shadow: .5rem 1rem 2rem rgba($color-black, .2); // x direction, y direction, blur, color
+  }
+
+  @include screen(tablet_portrait) {
+    font-size: 2.75rem;
+  }
+
+  @include screen(phone) {
+    font-size: 2.25rem;
   }
 }
 

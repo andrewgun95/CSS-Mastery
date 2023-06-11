@@ -16,6 +16,11 @@
         @include shadow-btn-normal;
 
         cursor: pointer;
+
+
+        @include screen(tablet_portrait) {
+            right: 4rem;
+        }
     }
 
     &__background {
@@ -31,6 +36,10 @@
         z-index: 10;
 
         transition: transform 1s;
+
+        @include screen(tablet_portrait) {
+            right: 4.5rem;
+        }
     }
 
     &__content {
