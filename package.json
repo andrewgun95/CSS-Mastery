@@ -6,7 +6,13 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "compile:sass": "node-sass --watch ./src/assets/sass/main.scss ./src/assets/css/style.css"
+    "watch:sass": "node-sass --watch ./src/assets/sass/main.scss ./src/assets/css/style.css",
+    "start": "npm-run-all --parallel serve watch:sass",
+    "compile:sass": "node-sass ./src/assets/sass/main.scss ./src/assets/css/style.comp.css",
+    "concat:css": "concat -o ./src/assets/css/style.concat.css ./src/assets/css/font.css ./src/assets/css/icon-style.css ./src/assets/css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' ./src/assets/css/style.concat.css -o ./src/assets/css/style.prefix.css",
+    "compress:css": "node-sass ./src/assets/css/style.prefix.css ./src/assets/css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass concat:css prefix:css compress:css"
   },
   "dependencies": {
     "core-js": "^3.8.3",
@@ -18,9 +24,13 @@
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "autoprefixer": "^10.4.16",
+    "concat": "^1.0.3",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
-    "node-sass": "^8.0.0"
+    "node-sass": "^8.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^10.1.0"
   },
   "eslintConfig": {
     "root": true,

@@ -52,7 +52,9 @@
           <span class="heading-primary--main">Outdoors</span>
           <span class="heading-primary--sub">is where life happens</span>
         </h1>
-        <a href="#section-tours" class="btn btn--white btn--animate">Discover our tours</a>
+        <a href="#section-tours" class="btn btn--white btn--animate"
+          >Discover our tours</a
+        >
       </div>
     </header>
     <main>
@@ -86,17 +88,24 @@
           </div>
           <div class="col-1-of-2">
             <div class="composition">
+              <!-- Width descriptor and breakpoints -->
               <img
+                srcset="./assets/img/nat-1.jpg 300w, ./assets/img/nat-1-large.jpg 1000w"
+                sizes="(max-width: 56.25em) 18vw, (max-width: 37.5em) 20vw, 18.75em"
                 class="composition__photo composition__photo--p1"
                 src="./assets/img/nat-1-large.jpg"
-                alt="Photo 1"
-              />
+                alt="Photo 1" 
+              >
               <img
+                srcset="./assets/img/nat-2.jpg 300w, ./assets/img/nat-2-large.jpg 1000w"
+                sizes="(max-width: 56.25em) 18vw, (max-width: 37.5em) 20vw, 18.75em"
                 class="composition__photo composition__photo--p2"
                 src="./assets/img/nat-2-large.jpg"
                 alt="Photo 2"
               />
               <img
+                srcset="./assets/img/nat-3.jpg 300w, ./assets/img/nat-3-large.jpg 1000w"
+                sizes="(max-width: 56.25em) 18vw, (max-width: 37.5em) 20vw, 18.75em"
                 class="composition__photo composition__photo--p3"
                 src="./assets/img/nat-3-large.jpg"
                 alt="Photo 3"
@@ -234,6 +243,8 @@
           <div class="story">
             <figure class="story__shape">
               <img
+                srcset="./assets/img/nat-8-small.jpg 300w, ./assets/img/nat-8.jpg 2000w"
+                sizes="(max-width: 56.25em) 30vw, (max-width: 37.5em) 36vw, 18.75em"
                 src="./assets/img/nat-8.jpg"
                 alt="Person on a tour"
                 class="story__img"
@@ -256,6 +267,8 @@
           <div class="story">
             <figure class="story__shape">
               <img
+                srcset="./assets/img/nat-9-small.jpg 300w, ./assets/img/nat-9.jpg 2000w"
+                sizes="(max-width: 56.25em) 30vw, (max-width: 37.5em) 36vw, 18.75em"
                 src="./assets/img/nat-9.jpg"
                 alt="Person on a tour"
                 class="story__img"
@@ -351,11 +364,15 @@
     </main>
     <footer class="footer">
       <div class="footer__logo-box">
-        <img
-          src="./assets/img/logo-green-2x.png"
-          alt=""
-          class="footer__logo-img"
-        />
+        <picture class="footer__logo-img">
+          <source 
+            media="(max-width: 37.5em)" 
+            srcset="./assets/img/logo-green-small-1x.png 1x, ./assets/img/logo-green-small-2x.png 2x">
+          <img
+            srcset="./assets/img/logo-green-1x.png 1x, ./assets/img/logo-green-2x.png 2x"
+            src="./assets/img/logo-green-2x.png"
+          />
+        </picture>
       </div>
       <div class="row">
         <div class="col-1-of-2">
@@ -394,11 +411,25 @@
     <div class="popup" id="popup-tours">
       <div class="popup__content">
         <div class="popup__left">
-          <img src="./assets/img/nat-8.jpg" alt="" class="popup__img" />
-          <img src="./assets/img/nat-9.jpg" alt="" class="popup__img" />
+          <img 
+            srcset="./assets/img/nat-8-small.jpg 300w, ./assets/img/nat-8.jpg 2000w"
+            sizes="(max-width: 56.25em) 30vw, (max-width: 37.5em) 36vw, 18.75em"
+            src="./assets/img/nat-8.jpg" 
+            alt="" 
+            class="popup__img" 
+          />
+          <img 
+            srcset="./assets/img/nat-9-small.jpg 300w, ./assets/img/nat-9.jpg 2000w"
+            sizes="(max-width: 56.25em) 30vw, (max-width: 37.5em) 36vw, 18.75em"
+            src="./assets/img/nat-9.jpg" 
+            alt="" 
+            class="popup__img" 
+          />
         </div>
         <div class="popup__right">
-          <h1 class="heading-secondary u-margin-bottom-small">Start Booking Now</h1>
+          <h1 class="heading-secondary u-margin-bottom-small">
+            Start Booking Now
+          </h1>
           <h2 class="heading-tertiary u-margin-bottom-small">
             Important - Please read the terms and condition first
           </h2>

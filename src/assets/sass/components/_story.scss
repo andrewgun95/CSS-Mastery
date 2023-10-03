@@ -14,10 +14,18 @@
         height: 15rem;
         float: left;
 
-        // Cool Effect : 1. Text render follow form of the circle shape
-        // Only work if have dimention and float
-        shape-outside: circle(50% at 50% 50%);   // 50% = 7.5rem
-        clip-path: circle(50% at 50% 50%);       // 50% = 7.5rem
+        overflow: hidden;
+        border-radius: 50%;
+
+        @supports (clip-path: circle(50% at 50% 50%)) or (-webkit-clip-path: circle(50% at 50% 50%)) {
+            // Cool Effect : 1. Text render follow form of the circle shape
+            // Only work if have dimention and float
+            -webkit-shape-outside: circle(50% at 50% 50%);
+            shape-outside: circle(50% at 50% 50%);      // 50% = 7.5rem
+            -webkit-clip-path: circle(50% at 50% 50%);  
+            clip-path: circle(50% at 50% 50%);          // 50% = 7.5rem
+            border-radius: none;
+        }
 
         transform: translateX(-3rem) skewX(8deg);
 

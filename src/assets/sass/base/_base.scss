@@ -28,7 +28,7 @@ html {
   }
 
   // The same as
-  // @media (max-width: 600px) {
+  // @media only screen and (max-width: 600px) {
   //   font-size: 40.625%;
   // }
 
@@ -57,4 +57,9 @@ a {
   @include screen(tablet_portrait) {
     padding: 0;
   }
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
 }
